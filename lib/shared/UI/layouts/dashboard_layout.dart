@@ -13,10 +13,10 @@ class DashboardLayout extends ConsumerWidget {
     return Scaffold(
       body: Column(
         children: [
-          const Navbar(),
+          Navbar(),
           Expanded(
             child: Row(
-              children: const [
+              children: [
                 Sidebar(), // Tu barra lateral
                 //Expanded(child: Expanded(child: UsersPage())),
               ],

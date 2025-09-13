@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:ui_clinic_business/shared/themes/index_themes.dart';
 
 final ThemeData appTheme = ThemeData(
   // La propiedad `primarySwatch` define la paleta de colores principal para la aplicación.
   // Flutter genera diferentes tonalidades de este color para la AppBar, botones, etc.
-  primarySwatch: Colors.red,
+  //  primarySwatch: Colors.red,
 
   // `scaffoldBackgroundColor` establece el color de fondo por defecto de todos los Scaffolds.
-  scaffoldBackgroundColor: const Color.fromARGB(255, 0, 255, 157),
+  scaffoldBackgroundColor: AppColors.backgroundLight,
 
   // `floatingActionButtonTheme` permite personalizar la apariencia del FloatingActionButton.
   floatingActionButtonTheme: const FloatingActionButtonThemeData(
