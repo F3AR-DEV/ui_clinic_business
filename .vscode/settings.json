@@ -1,0 +1,19 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "web": true,
+        "linux": true,
+        "macos": true,
+        "windows": true,
+        "build": true,
+        "android": true,
+        "ios": true,
+        ".idea": true,
+        ".dart_tool": true
+    },
+    "explorerExclude.backup": {}
+}

@@ -34,6 +34,12 @@ class _SidebarState extends State<Sidebar> {
             spreadRadius: 0.0, // Expansión o reducción de la sombra
           ),
         ],
+        border: const Border(
+          right: BorderSide(
+            color: Colors.black, // color del borde inferior
+            width: 0.2, // grosor del borde
+          ),
+        ),
       ),
       child: SingleChildScrollView(
         child: Column(

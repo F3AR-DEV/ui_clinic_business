@@ -1,7 +1,8 @@
 // lib/shared/UI/layouts/widgets/navbar.dart
 import 'package:flutter/material.dart';
 import 'package:ui_clinic_business/shared/UI/widgets/search_widget.dart';
-import 'package:ui_clinic_business/shared/utils/widget_ext.dart';
+import 'package:ui_clinic_business/shared/themes/colors.dart';
+import 'package:ui_clinic_business/shared/utils/children_gap.dart';
 
 class Navbar extends StatelessWidget {
   const Navbar({super.key});
@@ -12,7 +13,7 @@ class Navbar extends StatelessWidget {
       height: 70,
       padding: const EdgeInsets.symmetric(horizontal: 24),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
@@ -21,6 +22,12 @@ class Navbar extends StatelessWidget {
             spreadRadius: 0.0,
           ),
         ],
+        // border: const Border(
+        //  bottom: BorderSide(
+        //    color: Colors.black, // color del borde inferior
+        //    width: 0.2, // grosor del borde
+        //  ),
+        // ),
       ),
       child: Row(
         children: [
@@ -28,29 +35,28 @@ class Navbar extends StatelessWidget {
           // Usamos una Row para la imagen y los textos
           Row(
             children: [
-              // Sustituye con tu ruta de imagen
-              const SizedBox(width: 8),
+              // Use the correct relative path to the image
+              Image.asset(
+                'assets/IMG/logo.png',
+                height: 40, // You can adjust the height as needed
+              ),
+              const SizedBox(width: 20),
               const Text(
                 "CLINICA PROCMEFA",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
               ),
-              const SizedBox(
-                width: 24,
-              ), // Espacio entre "CLINICA PROCMEFA" y "Recepción"
+              const SizedBox(width: 90),
               const Text(
                 "Recepción",
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 26,
                   fontWeight: FontWeight.bold,
                   color: Color(0xFF243B6B),
                 ),
               ),
             ],
           ),
-
-          // 2. Separador para empujar los siguientes elementos a la derecha
           const Spacer(),
-
           // 3. Grupo de elementos de la derecha (búsqueda e iconos)
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -60,9 +66,9 @@ class Navbar extends StatelessWidget {
                 icon: const Icon(Icons.notifications_none),
                 onPressed: () {},
               ),
-              IconButton(icon: const Icon(Icons.settings), onPressed: () {}),
+              IconButton(icon: Icon(Icons.settings), onPressed: () {}),
               CircleAvatar(child: Icon(Icons.person)),
-            ].withSpacing(const SizedBox(width: 35)),
+            ].withGap(SizedBox(width: 35)),
           ),
         ],
       ),
