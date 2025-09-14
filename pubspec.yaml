@@ -12,6 +12,8 @@ dependencies:
   flutter_riverpod: ^3.0.0
   window_manager: ^0.5.1
   responsive_builder: ^0.7.1 # <-- agregado aquí
+  syncfusion_flutter_core: ^31.1.19
+  google_fonts: ^6.3.1
 
 dev_dependencies:
   flutter_test:
@@ -22,3 +24,10 @@ flutter:
   uses-material-design: true
   assets:
     - assets/img/
+    - assets/fonts/
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/inter/Inter-Regular.ttf
+        - asset: assets/fonts/inter/Inter-Bold.ttf
+        - asset: assets/fonts/inter/Inter-Italic.ttf

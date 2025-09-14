@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_clinic_business/shared/UI/widgets/search_widget.dart';
 import 'package:ui_clinic_business/shared/themes/colors.dart';
-import 'package:ui_clinic_business/shared/utils/children_gap.dart';
+import 'package:ui_clinic_business/shared/UI/helper/children_gap.dart';
 
 class Navbar extends StatelessWidget {
   const Navbar({super.key});

@@ -8,6 +8,7 @@ final ThemeData appTheme = ThemeData(
 
   // `scaffoldBackgroundColor` establece el color de fondo por defecto de todos los Scaffolds.
   scaffoldBackgroundColor: AppColors.backgroundLight,
+  fontFamily: 'Inter',
 
   // `floatingActionButtonTheme` permite personalizar la apariencia del FloatingActionButton.
   floatingActionButtonTheme: const FloatingActionButtonThemeData(

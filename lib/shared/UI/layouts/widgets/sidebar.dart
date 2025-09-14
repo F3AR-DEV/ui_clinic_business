@@ -13,10 +13,8 @@ class _SidebarState extends State<Sidebar> {
   int activeIndex = 0;
 
   final List<Map<String, dynamic>> modules = [
-    {'icon': Icons.person, 'label': 'Usuarios'},
-    {'icon': Icons.dashboard, 'label': 'Dashboard'},
-    {'icon': Icons.settings, 'label': 'Configuración'},
-    {'icon': Icons.report, 'label': 'Reportes'},
+    {'icon': Icons.home, 'label': 'Recepcion'},
+    {'icon': Icons.compare_arrows, 'label': 'Otro Modulo'},
   ];
 
   @override
@@ -25,20 +23,17 @@ class _SidebarState extends State<Sidebar> {
       width: 250,
       height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
-        color: AppColors.white, // color movido aquí
+        color: AppColors.white,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
             offset: const Offset(3, 5),
             blurRadius: 5,
-            spreadRadius: 0.0, // Expansión o reducción de la sombra
+            spreadRadius: 0.0,
           ),
         ],
         border: const Border(
-          right: BorderSide(
-            color: Colors.black, // color del borde inferior
-            width: 0.2, // grosor del borde
-          ),
+          right: BorderSide(color: Colors.black, width: 0.2),
         ),
       ),
       child: SingleChildScrollView(
@@ -67,7 +62,7 @@ class _SidebarState extends State<Sidebar> {
   }
 }
 
-class SidebarItem extends StatefulWidget {
+class SidebarItem extends StatelessWidget {
   final IconData icon;
   final String label;
   final VoidCallback onTap;
@@ -82,47 +77,53 @@ class SidebarItem extends StatefulWidget {
   });
 
   @override
-  State<SidebarItem> createState() => _SidebarItemState();
-}
-
-class _SidebarItemState extends State<SidebarItem> {
-  bool isHover = false;
-
-  @override
   Widget build(BuildContext context) {
-    Color bgColor = widget.isActive
-        ? AppColors.primaryBlue.withOpacity(0.15)
-        : isHover
-        ? Colors.grey.withOpacity(0.1)
-        : Colors.transparent;
+    Color iconColor = isActive ? AppColors.primaryBlue : Colors.grey;
+    Color textColor = isActive ? AppColors.primaryBlue : Colors.grey[700]!;
 
-    Color iconColor = widget.isActive
-        ? AppColors.primaryBlue
-        : Colors.grey[700]!;
-
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      onEnter: (_) => setState(() => isHover = true),
-      onExit: (_) => setState(() => isHover = false),
+    return Material(
+      color: Colors.transparent, // para que no opaque el fondo
       child: InkWell(
-        onTap: widget.onTap,
-        child: Container(
-          color: bgColor,
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(8),
+        splashColor: AppColors.primaryBlue.withOpacity(0.2), // color de la gota
+        highlightColor: AppColors.primaryBlue.withOpacity(
+          0.1,
+        ), // cuando se mantiene presionado
+        hoverColor: Colors.grey.withOpacity(0.1), // efecto hover en web/desktop
+        child: SizedBox(
+          height: 45, // altura uniforme
           child: Row(
             children: [
-              Icon(widget.icon, size: 20, color: iconColor),
-              const SizedBox(width: 12),
-              Text(
-                widget.label,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: widget.isActive
-                      ? AppColors.primaryBlue
-                      : Colors.black87,
-                  fontWeight: widget.isActive
-                      ? FontWeight.bold
-                      : FontWeight.normal,
+              // Indicador lateral
+              Container(
+                width: 5,
+                decoration: BoxDecoration(
+                  color: isActive ? AppColors.primaryBlue : Colors.transparent,
+                  borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(5),
+                    bottomRight: Radius.circular(5),
+                  ),
+                ),
+              ),
+              // Contenido
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    children: [
+                      Icon(icon, size: 24, color: iconColor),
+                      const SizedBox(width: 12),
+                      Text(
+                        label,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: textColor,
+                          fontWeight: FontWeight.bold, // corrección
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
