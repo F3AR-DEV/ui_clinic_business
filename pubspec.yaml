@@ -9,25 +9,37 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_riverpod: ^3.0.0
-  window_manager: ^0.5.1
-  responsive_builder: ^0.7.1 # <-- agregado aquí
-  syncfusion_flutter_core: ^31.1.19
-  google_fonts: ^6.3.1
+
+  # --- Riverpod ---
+  flutter_riverpod: ^3.0.0 # ✅ Última versión estable de la rama 2.x
+  riverpod_annotation: ^3.0.0 # ✅ Compatible con flutter_riverpod 2.6.x
+  # ⚠️ No llega a la rama 3.0 (aún inestable)
+
+  # --- GoRouter ---
+  go_router: ^16.2.1 # ✅ Compatible con Flutter 3.9.x y riverpod 2.x
+  go_router_builder: 4.0.1 # ✅ Usa source_gen 2.x, sin conflicto con riverpod_generator
+
+  # --- Extras ---
+  window_manager: ^0.5.1 # ✅ Independiente de Riverpod, estable
+  responsive_builder: ^0.7.1 # ✅ Solo UI responsive, sin conflicto
+  syncfusion_flutter_core: ^31.1.19 # ✅ Compatible con Flutter 3.9.x
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^6.0.0
+
+  flutter_lints: ^6.0.0 # ✅ Reglas de lint, independiente de compatibilidad
+
+  build_runner: ^2.4.9 # ✅ Compatible con riverpod_generator y go_router_builder
+  riverpod_generator: ^3.0.0 # ✅ Usa source_gen 2.x → totalmente alineado con Riverpod 2.x
 
 flutter:
   uses-material-design: true
   assets:
     - assets/img/
-    - assets/fonts/
   fonts:
     - family: Inter
       fonts:
         - asset: assets/fonts/inter/Inter-Regular.ttf
         - asset: assets/fonts/inter/Inter-Bold.ttf
-        - asset: assets/fonts/inter/Inter-Italic.ttf
+        - asset: assets/fonts/inter/Inter-italic.ttf

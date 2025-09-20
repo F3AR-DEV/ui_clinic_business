@@ -15,5 +15,9 @@
         ".idea": true,
         ".dart_tool": true
     },
-    "explorerExclude.backup": {}
+    "explorerExclude.backup": {},
+    "flutterTools.displayGetxContextMenu": false,
+    "flutterTools.displayMobxContextMenu": false,
+    "flutterTools.displayRiverpodContextMenu": true,
+    "flutterTools.displayModularContextMenu": false
 }

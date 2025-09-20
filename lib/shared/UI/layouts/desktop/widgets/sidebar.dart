@@ -1,6 +1,6 @@
 // lib/shared/UI/layouts/widgets/sidebar.dart
 import 'package:flutter/material.dart';
-import '../../../themes/colors.dart';
+import '../../../../themes/colors.dart';
 
 class Sidebar extends StatefulWidget {
   const Sidebar({super.key});

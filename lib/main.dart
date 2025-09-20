@@ -1,11 +1,11 @@
+import 'dart:io' show Platform;
+
+import 'package:flutter/foundation.dart' show kIsWeb;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ui_clinic_business/shared/UI/layouts/dashboard_layout.dart';
-import 'package:responsive_builder/responsive_builder.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
-import 'dart:io' show Platform;
 import 'package:window_manager/window_manager.dart';
-
+import 'shared/routes/app_router.dart';
 import 'shared/themes/index_themes.dart';
 
 void main() async {
@@ -30,21 +30,19 @@ void main() async {
   runApp(const ProviderScope(child: MainApp()));
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends ConsumerWidget {
   const MainApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Widget build(BuildContext context, WidgetRef ref) {
+    final appRouter = ref.watch(appRouterProvider);
+
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       showPerformanceOverlay: false,
       title: 'Clinica Procmefa',
       theme: appTheme,
-      home: ScreenTypeLayout.builder(
-        mobile: (_) => const DashboardLayout(),
-        tablet: (_) => const DashboardLayout(),
-        desktop: (_) => const DashboardLayout(),
-      ),
+      routerConfig: appRouter,
     );
   }
 }

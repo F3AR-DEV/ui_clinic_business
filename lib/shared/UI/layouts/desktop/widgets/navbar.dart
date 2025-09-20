@@ -1,8 +1,7 @@
-// lib/shared/UI/layouts/widgets/navbar.dart
 import 'package:flutter/material.dart';
-import 'package:ui_clinic_business/shared/UI/widgets/search_widget.dart';
+import 'package:ui_clinic_business/shared/ui/widgets/search_widget.dart';
 import 'package:ui_clinic_business/shared/themes/colors.dart';
-import 'package:ui_clinic_business/shared/UI/helper/children_gap.dart';
+import 'package:ui_clinic_business/shared/ui/helper/children_gap.dart';
 
 class Navbar extends StatelessWidget {
   const Navbar({super.key});
@@ -37,8 +36,11 @@ class Navbar extends StatelessWidget {
             children: [
               // Use the correct relative path to the image
               Image.asset(
-                'assets/IMG/logo.png',
-                height: 40, // You can adjust the height as needed
+                'assets/img/logo.png',
+                height: 40,
+                errorBuilder: (context, error, stackTrace) {
+                  return const Icon(Icons.error, color: Colors.red);
+                },
               ),
               const SizedBox(width: 20),
               const Text(
