@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ui_clinic_business/shared/ui/widgets/search_widget.dart';
 import 'package:ui_clinic_business/shared/themes/colors.dart';
+import 'package:ui_clinic_business/shared/ui/widgets/search_widget.dart';
 import 'package:ui_clinic_business/shared/ui/helper/children_gap.dart';
 
 class Navbar extends StatelessWidget {

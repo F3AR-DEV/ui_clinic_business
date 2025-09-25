@@ -1,6 +1,6 @@
 // lib/shared/UI/layouts/widgets/sidebar.dart
 import 'package:flutter/material.dart';
-import '../../../../themes/colors.dart';
+import 'package:ui_clinic_business/shared/themes/colors.dart';
 
 class Sidebar extends StatefulWidget {
   const Sidebar({super.key});
@@ -14,6 +14,7 @@ class _SidebarState extends State<Sidebar> {
 
   final List<Map<String, dynamic>> modules = [
     {'icon': Icons.home, 'label': 'Recepcion'},
+    {'icon': Icons.circle, 'label': 'configuracion'},
     {'icon': Icons.compare_arrows, 'label': 'Otro Modulo'},
   ];
 

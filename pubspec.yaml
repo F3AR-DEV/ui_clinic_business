@@ -16,13 +16,23 @@ dependencies:
   # ⚠️ No llega a la rama 3.0 (aún inestable)
 
   # --- GoRouter ---
-  go_router: ^16.2.1 # ✅ Compatible con Flutter 3.9.x y riverpod 2.x
-  go_router_builder: 4.0.1 # ✅ Usa source_gen 2.x, sin conflicto con riverpod_generator
+  go_router: ^16.2.2 # ✅ Compatible con Flutter 3.9.x y riverpod 2.x
+  go_router_builder: 4.1.0 # ✅ Usa source_gen 2.x, sin conflicto con riverpod_generator
 
   # --- Extras ---
   window_manager: ^0.5.1 # ✅ Independiente de Riverpod, estable
   responsive_builder: ^0.7.1 # ✅ Solo UI responsive, sin conflicto
-  syncfusion_flutter_core: ^31.1.19 # ✅ Compatible con Flutter 3.9.x
+  syncfusion_flutter_core: ^31.1.20 # ✅ Compatible con Flutter 3.9.x
+  get_storage: ^2.1.1
+  flutter_secure_storage: ^9.2.4
+  flutter_dotenv: ^6.0.0
+  sqflite_sqlcipher: ^3.4.0
+  dio: ^5.9.0
+  connectivity_plus: ^7.0.0
+  hive_ce: ^2.13.2
+  hive_flutter: ^1.1.0
+  hive_ce_flutter: ^2.3.2
+  crypto: ^3.0.6
 
 dev_dependencies:
   flutter_test:
@@ -30,13 +40,14 @@ dev_dependencies:
 
   flutter_lints: ^6.0.0 # ✅ Reglas de lint, independiente de compatibilidad
 
-  build_runner: ^2.4.9 # ✅ Compatible con riverpod_generator y go_router_builder
+  build_runner: ^2.6.0 # ✅ Compatible con riverpod_generator y go_router_builder
   riverpod_generator: ^3.0.0 # ✅ Usa source_gen 2.x → totalmente alineado con Riverpod 2.x
-
+  hive_ce_generator: ^1.9.3
 flutter:
   uses-material-design: true
   assets:
     - assets/img/
+    - .env
   fonts:
     - family: Inter
       fonts:

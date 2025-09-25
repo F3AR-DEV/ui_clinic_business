@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ui_clinic_business/shared/themes/index_themes.dart';
+
+import 'colors.dart';
 
 final ThemeData appTheme = ThemeData(
   // La propiedad `primarySwatch` define la paleta de colores principal para la aplicación.

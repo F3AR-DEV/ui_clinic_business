@@ -1,7 +1,8 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_clinic_business/shared/themes/colors.dart';
 
-class CustomTextField extends StatelessWidget {
+class CustomTextField extends ConsumerWidget {
   final String label;
   final String hint;
   final TextEditingController? controller;
@@ -20,7 +21,7 @@ class CustomTextField extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

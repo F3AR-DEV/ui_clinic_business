@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ui_clinic_business/shared/animations/animated_dialog.dart';
 import 'package:ui_clinic_business/shared/themes/colors.dart';
+import 'package:ui_clinic_business/shared/animations/animated_dialog.dart';
 
 Future<T?> showCustomTabDialog<T>({
   required BuildContext context,
